@@ -1,0 +1,25 @@
+# Scaffold only: no Thunderbird tree yet, so this workflow documents the gate
+# without publishing installers. Replace jobs when the fork import lands.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  docs-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Require foundation and security docs
+        run: |
+          test -f README.md
+          test -f NOTICE
+          test -f LICENSE
+          test -f docs/security.md
+          test -f docs/rebrand.md
+          test -f docs/upstream.md
+          test -f docs/build.md
+          grep -q 'Planned' README.md
+          echo "Email remains Planned until a real installer exists — do not flip apps.json here."

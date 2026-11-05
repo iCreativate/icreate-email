@@ -1,0 +1,10 @@
+This repository will contain:
+
+1. Mozilla Thunderbird source and modifications under the Mozilla Public License 2.0
+   (https://www.mozilla.org/MPL/2.0/).
+2. iCreate-owned files that are not derivatives of MPL-covered Thunderbird files, licensed
+   under the MIT License (see NOTICE).
+
+The full Thunderbird source tree is not vendored in this scaffolding commit. When the
+upstream tree is imported, each MPL-covered file retains its MPL 2.0 header, and NOTICE
+lists third-party notices required by Thunderbird.
